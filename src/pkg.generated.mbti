@@ -1,0 +1,21 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "tiye/respo-markdown"
+
+import(
+  "tiye/respo/node"
+  "tiye/respo_css"
+)
+
+// Values
+pub fn[T] comp_md(String, class_name? : String) -> @node.RespoNode[T]
+
+pub fn[T] comp_md_block(String, class_name? : String, style? : @respo_css.RespoStyle, highlighter? : (String, String) -> String) -> @node.RespoNode[T]
+
+// Errors
+
+// Types and methods
+
+// Type aliases
+
+// Traits
+

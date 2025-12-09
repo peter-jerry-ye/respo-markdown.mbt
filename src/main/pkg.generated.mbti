@@ -1,0 +1,34 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "tiye/respo-markdown/main"
+
+import(
+  "moonbitlang/core/json"
+)
+
+// Values
+
+// Errors
+
+// Types and methods
+type ActionOp
+
+type ContainerState
+pub impl Default for ContainerState
+pub impl ToJson for ContainerState
+pub impl @json.FromJson for ContainerState
+
+type Store
+pub impl ToJson for Store
+pub impl @json.FromJson for Store
+
+type Task
+pub impl Default for Task
+pub impl Eq for Task
+pub impl Hash for Task
+pub impl ToJson for Task
+pub impl @json.FromJson for Task
+
+// Type aliases
+
+// Traits
+
