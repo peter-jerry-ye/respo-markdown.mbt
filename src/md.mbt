@@ -247,14 +247,11 @@ fn[T] comp_text_block(lines : Array[String]) -> @respo_node.RespoNode[T] {
 ///|
 fn[T] render_inline(text : String) -> Array[@respo_node.RespoNode[T]] {
   let els = []
-  println("render inline: " + text)
   let lines = split_line(text)
   for chunk in lines {
     match chunk {
-      Code(content) => {
-        println("inline code: " + content)
+      Code(content) =>
         els.push(code(class_name=style_inline_code, inner_text=content))
-      }
       Url(content) =>
         els.push(a(href=content, inner_text=content, target=Blank))
       Link(content) => els.push(comp_link(content))

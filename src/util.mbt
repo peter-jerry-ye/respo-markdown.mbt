@@ -218,7 +218,6 @@ fn split_line_iter(
             let next_left = left.unsafe_substring(start=1, end=left.length())
             if left.has_prefix("*") {
               if match_string_pattern(next_left, peek_emphasis) is Some(matched) {
-                println("emphasis: \{matched}")
                 let emphasis = matched.selects[0]
                 let rest_line = next_left
                   .unsafe_substring(

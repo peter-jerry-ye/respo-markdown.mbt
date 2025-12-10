@@ -8,7 +8,7 @@ priv struct MatchResult {
   matched : String
   // start : UInt
   selects : Array[String]
-} derive(Show)
+}
 
 ///|
 extern "js" fn JsRegex::js_regex_create(
