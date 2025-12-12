@@ -37,15 +37,15 @@ fn[Op : @respo_node.RespoAction] comp_container(
 ) -> @respo_node.RespoNode[Op] {
   let cursor = states.path()
   let state = (states.cast_branch() : ContainerState)
-  div(
-    class_name=ui_global,
-    style=respo_style(
+  @respo_node.div(
+    class_name=@respo.ui_global,
+    style=@css.respo_style(
       width=96 |> Percent,
       margin="0 auto" |> Custom,
       padding=8 |> Px,
     ),
     [
-      div(class_name=ui_row_middle, [
+      @respo_node.div(class_name=ui_row_middle, [
         img(
           src="https://cos-sh.tiye.me/cos-up/bb4c2755050318e864b56f59145d726e-SubstractRespo.png",
           width=40,
@@ -57,18 +57,18 @@ fn[Op : @respo_node.RespoAction] comp_container(
           inner_text="respo-markdown",
         ),
       ]),
-      div([
+      @respo_node.div([
         comp_md_block(
           "Respo Markdown component renders Markdown text to virtual DOM in Respo. Require the code with\n\n```cirru\n\{code_demo}\n```\n",
         ),
       ]),
       space(height=40),
-      div([
-        div([comp_md("This is an example for using `comp-md`:")]),
-        div([
+      @respo_node.div([
+        @respo_node.div([comp_md("This is an example for using `comp-md`:")]),
+        @respo_node.div([
           input(
             class_name=ui_input,
-            style=respo_style(width=100 |> Percent),
+            style=@css.respo_style(width=100 |> Percent),
             value=state.text,
             placeholder="text inline",
             on_input=fn(e, dispatch) {
@@ -81,17 +81,17 @@ fn[Op : @respo_node.RespoAction] comp_container(
         ]),
       ]),
       space(height=40),
-      div([
-        div(class_name="example", [
+      @respo_node.div([
+        @respo_node.div(class_name="example", [
           comp_md_block("Example For using `comp-md-block`:"),
         ]),
-        div(class_name=ui_row, [
-          div(class_name=ui_expand, [
+        @respo_node.div(class_name=ui_row, [
+          @respo_node.div(class_name=ui_expand, [
             textarea(
               placeholder="multi-line content",
               value=state.draft,
               class_list=[ui_textarea, ui_font_code],
-              style=respo_style(
+              style=@css.respo_style(
                 height=100 |> Percent,
                 width=100 |> Percent,
                 font_size=13,
@@ -103,9 +103,11 @@ fn[Op : @respo_node.RespoAction] comp_container(
               },
             ),
           ]),
-          div(class_name=ui_expand, style=respo_style(padding=8 |> Px), [
-            comp_md_block(state.draft),
-          ]),
+          @respo_node.div(
+            class_name=ui_expand,
+            style=@css.respo_style(padding=8 |> Px),
+            [comp_md_block(state.draft)],
+          ),
         ]),
       ]),
       space(height=200),
